@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const departmentSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true }
+    name: { type: String, required: true },
+    link: { type: String, required: true }
   },
   { timestamps: true }
 );

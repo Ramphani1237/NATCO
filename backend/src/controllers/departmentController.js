@@ -7,7 +7,13 @@ exports.createDepartment = async (req, res) => {
   if (!name)
     return res.status(400).json({ message: "Department name required" });
 
-  const dept = await Department.create({ name });
+  const link = `http://localhost:3000/register/department/${Date.now()}`; // or use id after save
+
+  const dept = await Department.create({ name, link });
+  // Update link with id
+  dept.link = `http://localhost:3000/register/department/${dept._id}`;
+  await dept.save();
+
   res.json(dept);
 };
 

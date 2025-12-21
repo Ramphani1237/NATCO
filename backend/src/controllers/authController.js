@@ -111,3 +111,33 @@ exports.getMe = async (req, res) => {
   const user = await User.findById(req.user.id).select('-password');
   res.json(user);
 };
+
+// REGISTER VIA DEPARTMENT LINK
+exports.registerDepartment = async (req, res) => {
+  try {
+    const { deptId, name, email, password } = req.body;
+
+    const department = await require("../models/Department").findById(deptId);
+    if (!department) return res.status(404).json({ message: "Department not found" });
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ message: "User already exists" });
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await User.create({
+      name,
+      email,
+      password: hashedPassword,
+      role: "FACULTY",
+      department: department.name,
+      status: "PENDING"
+    });
+
+    res.status(201).json({
+      message: "Registration successful. Await admin approval."
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
