@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Main() {
   const [showNav, setShowNav] = useState(true);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -359,8 +359,6 @@ function Main() {
 
   const [hoveredSection, setHoveredSection] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [hoveredLink, setHoveredLink] = useState(null);
-  const [hoveredButton, setHoveredButton] = useState(null);
   const [hoverDonorBtn, setHoverDonorBtn] = useState(false);
 
 
