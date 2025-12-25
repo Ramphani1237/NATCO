@@ -2,23 +2,32 @@ const User = require("../models/User");
 
 // GET ALL USERS
 exports.getAllUsers = async (req, res) => {
-  const users = await User.find();
-  res.json(users);
+  try {
+    const users = await User.find().select("-password");
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };
 
 // APPROVE USER
 exports.approveUser = async (req, res) => {
-  const user = await User.findById(req.params.id);
-  if (!user) return res.status(404).json({ message: "User not found" });
+  try {
+    const { userId } = req.params;
 
-  user.status = "APPROVED";
-  await user.save();
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
 
-  res.json({ message: "User approved" });
-};
+    user.status = "APPROVED";
+    await user.save();
 
-// REJECT / DELETE USER
-exports.deleteUser = async (req, res) => {
-  await User.findByIdAndDelete(req.params.id);
-  res.json({ message: "User removed" });
+    res.json({
+      message: "User approved successfully",
+      user
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };

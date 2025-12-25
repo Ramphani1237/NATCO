@@ -1,17 +1,20 @@
 const express = require("express");
 const router = express.Router();
+
 const {
   getAllUsers,
-  approveUser,
-  deleteUser
-} = require("../controllers/adminController");
+  approveUser
+} = require("../Controllers/adminController");
 
 const { protect, restrictTo } = require("../middleware/authMiddleware");
 
+// ADMIN ONLY
 router.use(protect, restrictTo("ADMIN"));
 
+// GET all users    
 router.get("/users", getAllUsers);
-router.put("/approve/:id", approveUser);
-router.delete("/user/:id", deleteUser);
+
+// APPROVE user
+router.patch("/approve/:userId", approveUser);
 
 module.exports = router;

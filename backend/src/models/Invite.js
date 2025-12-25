@@ -1,16 +1,11 @@
 const mongoose = require("mongoose");
 
-const inviteSchema = new mongoose.Schema(
-  {
-    email: String,
-    role: String,
-    department: String,
-    token: { type: String, required: true },
-    link: { type: String, required: true },
-    used: { type: Boolean, default: false }, 
-    expiresAt: { type: Date, required: true }
-  },
-  { timestamps: true }
-);
+const inviteSchema = new mongoose.Schema({
+  token: { type: String, required: true },
+  department: { type: String, required: true },
+  role: { type: String, default: "FACULTY" },
+  used: { type: Boolean, default: false },
+  expiresAt: { type: Date, required: true }
+});
 
 module.exports = mongoose.model("Invite", inviteSchema);

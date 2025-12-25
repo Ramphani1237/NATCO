@@ -1,14 +1,7 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
+const { getProfile } = require("../Controllers/facultyController");
+const { protect } = require("../middleware/authMiddleware");
 
-const { getMyProfile } = require("../controllers/facultyController");
-const { protect, restrictTo } = require("../middleware/authMiddleware");
-
-router.get(
-  "/profile",
-  protect,
-  restrictTo("FACULTY"),
-  getMyProfile
-);
+router.get("/profile", protect, getProfile);
 
 module.exports = router;
