@@ -1,0 +1,53 @@
+
+/* ===== TRANSITION BASE ===== */
+* {
+  transition: all 0.25s ease;
+}
+
+/* ===== BUTTON HOVER ===== */
+.auth-button,
+.btn,
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-button:hover,
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CARD HOVER ===== */
+.card,
+.dashboard-card,
+.auth-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== LINK HOVER ===== */
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}

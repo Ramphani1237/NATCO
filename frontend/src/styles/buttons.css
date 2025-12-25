@@ -1,0 +1,17 @@
+/* =========================
+   BUTTONS
+   ========================= */
+
+.logout-button {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #990000;
+}

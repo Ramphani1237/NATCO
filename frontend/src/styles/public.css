@@ -1,0 +1,154 @@
+/* ===============================
+   GLOBAL PUBLIC PAGE WRAPPER
+================================ */
+.public-page {
+  background-color: #eef2f5; /* soft neutral govt background */
+  min-height: 100vh;
+  padding: 50px 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2933;
+}
+
+/* ===============================
+   MAIN CONTENT CARD
+================================ */
+.public-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 48px 56px;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+.public-heading {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  color: #0b3c5d;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.public-subheading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #004d61;
+  margin-bottom: 4px;
+}
+
+.designation {
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   DONOR HEADER SECTION
+================================ */
+.donor-header {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.donor-image {
+  width: 210px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+}
+
+.donor-summary {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1f2937;
+}
+
+/* ===============================
+   SECTION STYLING
+================================ */
+.public-section {
+  margin-top: 40px;
+}
+
+.public-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0b3c5d;
+  border-left: 4px solid #0b3c5d;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+.public-section p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+/* ===============================
+   LISTS
+================================ */
+.public-list {
+  padding-left: 22px;
+  margin-top: 10px;
+}
+
+.public-list li {
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+/* ===============================
+   AWARDS SECTION
+================================ */
+.awards-grid ul {
+  columns: 2;
+  column-gap: 40px;
+  margin-top: 10px;
+}
+
+.awards-grid li {
+  break-inside: avoid;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.awards-note {
+  margin-top: 16px;
+  font-size: 14.5px;
+  color: #4b5563;
+  font-style: italic;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .public-card {
+    padding: 30px 24px;
+  }
+
+  .donor-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .donor-image {
+    width: 180px;
+  }
+
+  .awards-grid ul {
+    columns: 1;
+  }
+}
