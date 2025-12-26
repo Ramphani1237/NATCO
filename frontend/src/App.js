@@ -5,13 +5,11 @@ import AdminLogin from "./pages/auth/AdminLogin";
 import FacultyLogin from "./pages/auth/FacultyLogin";
 import Register from "./pages/auth/Register";
 import Donor from "./pages/Donor";
-import dotenv from "dotenv";
-dotenv.config();
+
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import FacultyProfile from "./pages/faculty/FacultyDashboard";
 
 import ProtectedRoute from "./components/ProtectedRoute";
-console.log("ENV CHECK FROM APP:", import.meta.env.VITE_API_URL);
 
 export default function App() {
   return (
