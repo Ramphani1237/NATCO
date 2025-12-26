@@ -16,10 +16,15 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
+    if (config.url.includes("/auth/login") || config.url.includes("/auth/register")) {
+      return config;
+    }
+
     const token = localStorage.getItem("token");
-    if (token) {
+    if (token && token !== "undefined") {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
   },
   (error) => Promise.reject(error)
