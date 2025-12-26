@@ -4,7 +4,7 @@ const router = express.Router();
 const {
   getAllUsers,
   approveUser
-} = require("../Controllers/adminController");
+} = require("../controllers/adminController");
 
 const { protect, restrictTo } = require("../middleware/authMiddleware");
 

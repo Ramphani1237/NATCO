@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const Invite = require("../models/Invite");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const generateToken = (user) =>
@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid credentials" });
+    if (!user) return res.status(400).json({ message: "Invalid credential" });
 
     if (!(await bcrypt.compare(password, user.password)))
         return res.status(400).json({ message: "Invalid credentials" });
