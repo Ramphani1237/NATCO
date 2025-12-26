@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const authRoutes = require("./src/routes/authRoutes");
 const adminRoutes = require("./src/routes/adminRoutes");
 const departmentRoutes = require("./src/routes/departmentRoutes");
 const facultyRoutes = require("./src/routes/facultyRoutes");
@@ -39,6 +39,7 @@ app.use(express.json());
 app.use("/api/admin", adminRoutes);
 app.use("/api/departments", departmentRoutes);
 app.use("/api/faculty", facultyRoutes);
+app.use("/api/auth", authRoutes);
 /* ===========================
    TEST ROUTES
 =========================== */
@@ -46,9 +47,6 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "Backend working" });
 });
 
-app.post("/api/auth/login", (req, res) => {
-  res.json({ message: "Login route reached" });
-});
 
 /* ===========================
    SERVER
