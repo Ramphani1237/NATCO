@@ -19,5 +19,8 @@ router.get("/users", (req, res) => {
 });
 // APPROVE user
 router.patch("/approve/:userId", approveUser);
+router.post("/generateInvite", (req, res) => {
+  res.json({ message: "Invite generated" });
+});
 
 module.exports = router;
