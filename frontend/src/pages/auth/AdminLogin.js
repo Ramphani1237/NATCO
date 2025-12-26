@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "../../styles/auth.css";
-
+import api from "../../services/api";
 export default function AdminLogin() {
   const navigate = useNavigate();
 
@@ -17,10 +16,10 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
-        { email: email.trim(), password }
-      );
+      const res = await api.post("/auth/login", {
+        email: email.trim(),
+        password
+      });
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", "ADMIN");
