@@ -21,7 +21,7 @@ export default function FacultyLogin() {
         email,
         password
       });
-
+      console.log("LOGIN RESPONSE:", res.data);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", "FACULTY");
 
