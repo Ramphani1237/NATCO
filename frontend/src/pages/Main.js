@@ -3,6 +3,9 @@ import bgImage from './bg.png';
 import logo from './LOGO.png';
 import donor from './donor.png';
 import ap from './AP.png';
+import App from "./App.js"; 
+console.log("MAIN ENTRY LOADED");
+
 function Main() {
   const [showNav, setShowNav] = useState(true);
   const [hoveredButton, setHoveredButton] = useState(null);
