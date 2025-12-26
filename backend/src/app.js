@@ -11,7 +11,6 @@ const app = express();
 
 app.use(cors({
   origin: "https://natco-pi.vercel.app",
-  credentials: true
 }));
 
 //allow cors preflight requests

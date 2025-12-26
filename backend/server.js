@@ -7,7 +7,6 @@ const departmentRoutes = require("./src/routes/departmentRoutes");
 const facultyRoutes = require("./src/routes/facultyRoutes");
 
 const app = express();
-console.log("🔥 SERVER.JS WITH CORS LOADED 🔥");
 
 /* ============================
    CORS — MUST BE FIRST
@@ -18,9 +17,9 @@ app.use(cors({
     "http://localhost:3000"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 // IMPORTANT: handle preflight
 app.options("*", cors());
