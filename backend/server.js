@@ -1,8 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-
+const adminRoutes = require("./src/routes/adminRoutes");
+const departmentRoutes = require("./src/routes/departmentRoutes");
 const app = express();
-
+app.use("/api/admin", adminRoutes);
+app.use("/api/departments", departmentRoutes);
 app.use(cors({
   origin: "https://natco-pi.vercel.app",
   credentials: true

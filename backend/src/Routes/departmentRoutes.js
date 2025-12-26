@@ -3,6 +3,10 @@ const { createDepartment, getDepartments } = require("../Controllers/departmentC
 const { protect, restrictTo } = require("../middleware/authMiddleware");
 
 router.post("/", protect, restrictTo("ADMIN"), createDepartment);
-router.get("/", getDepartments);
-
+router.get("/", (req, res) => {
+  res.json([
+    { id: 1, name: "Oncology" },
+    { id: 2, name: "Radiology" }
+  ]);
+});
 module.exports = router;

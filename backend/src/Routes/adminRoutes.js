@@ -12,8 +12,11 @@ const { protect, restrictTo } = require("../middleware/authMiddleware");
 router.use(protect, restrictTo("ADMIN"));
 
 // GET all users    
-router.get("/users", getAllUsers);
-
+router.get("/users", (req, res) => {
+  res.json([
+    { id: 1, name: "Admin User 1" }
+  ]);
+});
 // APPROVE user
 router.patch("/approve/:userId", approveUser);
 
