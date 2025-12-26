@@ -5,6 +5,7 @@ import AdminLogin from "./pages/auth/AdminLogin";
 import FacultyLogin from "./pages/auth/FacultyLogin";
 import Register from "./pages/auth/Register";
 import Donor from "./pages/Donor";
+console.log("ENV CHECK FROM APP:", import.meta.env.VITE_API_URL);
 
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import FacultyProfile from "./pages/faculty/FacultyDashboard";
