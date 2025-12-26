@@ -3,11 +3,9 @@ import bgImage from './bg.png';
 import logo from './LOGO.png';
 import donor from './donor.png';
 import ap from './AP.png';
-import { useNavigate } from "react-router-dom";
-
 function Main() {
   const [showNav, setShowNav] = useState(true);
-  
+  const [hoveredButton, setHoveredButton] = useState(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -359,8 +357,6 @@ function Main() {
 
   const [hoveredSection, setHoveredSection] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [hoverDonorBtn, setHoverDonorBtn] = useState(false);
-
 
   return (
     <div style={styles.container}>
