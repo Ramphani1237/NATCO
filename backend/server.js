@@ -7,6 +7,7 @@ const departmentRoutes = require("./src/routes/departmentRoutes");
 const facultyRoutes = require("./src/routes/facultyRoutes");
 
 const app = express();
+console.log("🔥 SERVER.JS WITH CORS LOADED 🔥");
 
 /* ============================
    CORS — MUST BE FIRST
