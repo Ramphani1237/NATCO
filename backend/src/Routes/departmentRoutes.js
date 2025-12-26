@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     console.log("✅ departmentRoutes loaded");
   res.json([
     { id: 1, name: "Oncology" },
-    { id: 2, name: "Radiology" }
+    { id: 2, name: "Radiation Oncology" }
   ]);
 });
 module.exports = router;
