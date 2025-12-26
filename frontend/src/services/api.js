@@ -1,7 +1,9 @@
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL;
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 if (!API_URL) {
-  throw new Error("VITE_API_URL is missing in frontend build");
+  throw new Error("REACT_APP_API_URL is missing");
 }
 
 const api = axios.create({
@@ -12,7 +14,6 @@ const api = axios.create({
   }
 });
 
-// Attach token automatically if present
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {

@@ -3,7 +3,6 @@ import bgImage from './bg.png';
 import logo from './LOGO.png';
 import donor from './donor.png';
 import ap from './AP.png';
-import App from "../App"; 
 console.log("MAIN ENTRY LOADED");
 
 function Main() {
