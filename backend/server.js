@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const adminRoutes = require("./src/routes/adminRoutes");
 const departmentRoutes = require("./src/routes/departmentRoutes");
-
+const facultyRoutes = require("./src/routes/facultyRoutes");
 const app = express();
 
 /* ===========================
@@ -38,7 +38,7 @@ app.use(express.json());
 =========================== */
 app.use("/api/admin", adminRoutes);
 app.use("/api/departments", departmentRoutes);
-
+app.use("/api/faculty", facultyRoutes);
 /* ===========================
    TEST ROUTES
 =========================== */
