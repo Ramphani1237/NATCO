@@ -9,16 +9,16 @@ const departmentRoutes = require("./routes/departmentRoutes");
 
 const app = express();
 
-app.use(cors({
+const corsOptions = {
   origin: [
     "https://natco-pi.vercel.app",
     "http://localhost:3000"
-  ]
-}));
+  ],
+  credentials: true
+};
 
-
-//allow cors preflight requests
-app.options("*", cors());
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 
