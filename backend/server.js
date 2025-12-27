@@ -11,18 +11,18 @@ const app = express();
 /* ============================
    CORS — MUST BE FIRST
 ============================ */
-app.use(cors({
+const corsOptions = {
   origin: [
     "https://natco-pi.vercel.app",
     "http://localhost:3000"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true   // ✅ THIS IS THE KEY
+};
 
-
-// IMPORTANT: handle preflight
-app.options("*", cors());
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
 
 /* ============================
    BODY PARSER
